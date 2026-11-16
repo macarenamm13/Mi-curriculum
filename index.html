@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Macarena Moscoso Martín | Currículum</title>
+  <style>
+    :root {
+      /* Blanco puro para la navegación y las superficies principales. */
+      --color-blanco: #FFFFFF;
+      /* Beige arena del fondo lateral decorativo. */
+      --color-arena: #E2D7CA;
+      /* Crema suave para la tarjeta de perfil. */
+      --color-crema: #F3ECE6;
+      /* Azul cobalto para enlaces, líneas y acciones destacadas. */
+      --color-acento: #1446F5;
+      /* Negro para títulos y elementos de alto contraste. */
+      --color-negro: #000000;
+      /* Gris carbón para el texto de lectura. */
+      --color-texto: #222222;
+      /* Gris neutro para etiquetas y detalles secundarios. */
+      --color-secundario: #6b625b;
+      /* Sombra cálida y difusa de la tarjeta flotante. */
+      --sombra-tarjeta: 0 24px 55px rgb(52 39 27 / 15%);
+      font-family: "Avenir Next", Avenir, Montserrat, Poppins, Arial, sans-serif;
+      color: var(--color-negro);
+      background: var(--color-blanco);
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--color-blanco);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 18px clamp(22px, 6vw, 88px);
+      background: var(--color-blanco);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 14px;
+      height: 14px;
+      background: var(--color-acento);
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 750;
+      letter-spacing: -0.035em;
+    }
+
+    .brand-divider {
+      color: #a7a09a;
+    }
+
+    .brand-role {
+      color: var(--color-texto);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+    }
+
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: clamp(14px, 2.5vw, 34px);
+    }
+
+    .site-nav a {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible,
+    .site-nav a[aria-current="page"] {
+      color: var(--color-acento);
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(270px, 0.78fr) minmax(0, 1.22fr);
+      min-height: 570px;
+      padding: 86px clamp(28px, 9vw, 138px) 90px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0 60% 0 0;
+      background: var(--color-arena);
+      content: "";
+    }
+
+    .profile-card {
+      align-self: center;
+      justify-self: center;
+      width: min(100%, 300px);
+      overflow: hidden;
+      background: var(--color-crema);
+      box-shadow: var(--sombra-tarjeta);
+      text-align: center;
+    }
+
+    .profile-card-main {
+      padding: 38px 28px 34px;
+    }
+
+    .portrait {
+      display: block;
+      width: 164px;
+      height: 164px;
+      margin: 0 auto 24px;
+      border: 7px solid rgb(255 255 255 / 78%);
+      border-radius: 50%;
+      background: #d7d4d1;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      max-width: 220px;
+      margin: 0 auto;
+      font-size: 24px;
+      font-weight: 750;
+      letter-spacing: -0.045em;
+      line-height: 1.12;
+    }
+
+    .profile-rule {
+      width: 43px;
+      height: 3px;
+      margin: 20px auto 16px;
+      border: 0;
+      background: var(--color-acento);
+    }
+
+    .profile-caption {
+      margin: 0;
+      color: var(--color-texto);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      line-height: 1.7;
+    }
+
+    .profile-card-footer {
+      padding: 15px;
+      background: var(--color-blanco);
+      color: var(--color-texto);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-copy {
+      align-self: center;
+      max-width: 570px;
+      padding: 0 0 0 clamp(36px, 7vw, 104px);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--color-secundario);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-size: clamp(64px, 9vw, 112px);
+      font-weight: 800;
+      letter-spacing: -0.085em;
+      line-height: 0.92;
+    }
+
+    .hero-subtitle {
+      margin: 18px 0 0;
+      font-size: clamp(19px, 2.3vw, 27px);
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 1.2;
+    }
+
+    .hero-description {
+      max-width: 470px;
+      margin: 24px 0 0;
+      color: var(--color-texto);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 27px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border: 1px solid var(--color-negro);
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      transition: transform 160ms ease, background-color 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      border-color: var(--color-acento);
+      background: var(--color-acento);
+      color: var(--color-blanco);
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--color-negro);
+    }
+
+    .resume {
+      width: min(100% - 48px, 1080px);
+      margin: 0 auto;
+      padding: 24px 0 96px;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: minmax(170px, 0.42fr) minmax(0, 1fr);
+      gap: clamp(26px, 6vw, 84px);
+      padding: 42px 0;
+      border-top: 1px solid #e8e4e0;
+      scroll-margin-top: 24px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 750;
+      letter-spacing: -0.04em;
+    }
+
+    .section-content {
+      color: var(--color-texto);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .section-content > :first-child {
+      margin-top: 0;
+    }
+
+    .section-content > :last-child {
+      margin-bottom: 0;
+    }
+
+    .section-marker {
+      grid-column: 1 / -1;
+      color: var(--color-secundario);
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 10px;
+      letter-spacing: 0.03em;
+      line-height: 1.5;
+    }
+
+    .section-marker-end {
+      margin-top: 14px;
+    }
+
+    .entry + .entry {
+      margin-top: 22px;
+    }
+
+    .entry-title {
+      margin: 0;
+      color: var(--color-negro);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .entry-detail {
+      margin: 3px 0 0;
+      color: var(--color-secundario);
+      font-size: 13px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skills-list li {
+      padding: 8px 13px;
+      border: 1px solid #e6e0da;
+      border-radius: 999px;
+      color: var(--color-texto);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 30px;
+    }
+
+    .contact-item {
+      min-width: 0;
+    }
+
+    .contact-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--color-secundario);
+      font-size: 10px;
+      font-weight: 650;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .contact-item a {
+      overflow-wrap: anywhere;
+      text-decoration-color: #bcb3aa;
+      text-underline-offset: 3px;
+    }
+
+    .site-footer {
+      padding: 22px 24px;
+      border-top: 1px solid #e8e4e0;
+      color: var(--color-secundario);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 17px;
+        padding: 19px 22px 17px;
+      }
+
+      .brand {
+        min-width: 0;
+        max-width: 100%;
+        flex-wrap: wrap;
+        column-gap: 8px;
+      }
+
+      .site-nav {
+        justify-content: flex-start;
+        gap: 12px 20px;
+      }
+
+      .site-nav a {
+        font-size: 9px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        min-height: auto;
+        padding: 42px 24px 58px;
+      }
+
+      .hero::before {
+        inset: 0 0 46% 0;
+      }
+
+      .profile-card {
+        width: min(100%, 290px);
+      }
+
+      .profile-card-main {
+        padding: 30px 24px 27px;
+      }
+
+      .portrait {
+        width: 145px;
+        height: 145px;
+      }
+
+      .hero-copy {
+        width: min(100%, 540px);
+        justify-self: center;
+        padding: 0;
+      }
+
+      .hero-title {
+        font-size: clamp(66px, 18vw, 94px);
+      }
+
+      .resume {
+        width: min(100% - 44px, 600px);
+        padding-top: 8px;
+        padding-bottom: 60px;
+      }
+
+      .section {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 31px 0;
+      }
+
+      .section-marker {
+        grid-column: 1;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .brand-name {
+        font-size: 14px;
+      }
+
+      .brand-role {
+        font-size: 8px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      :root {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Macarena Moscoso Martín, inicio">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Macarena Moscoso Martín</span>
+      <span class="brand-divider" aria-hidden="true">/</span>
+      <span class="brand-role">ESTUDIANTE DE TRABAJO SOCIAL</span>
+    </a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="#sobre-mi" aria-current="page">SOBRE MÍ</a>
+      <a href="#formacion">CURRÍCULUM</a>
+      <a href="#otros">OTROS</a>
+      <a href="#contacto">CONTACTO</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <aside class="profile-card" aria-label="Perfil de Macarena Moscoso Martín">
+        <div class="profile-card-main">
+          <img class="portrait" src="imagenes/foto.jpg" alt="Fotografía de Macarena Moscoso Martín" onerror="this.onerror=null;this.src='imagenes/foto.jpg.png'">
+          <h2 class="profile-name">Macarena<br>Moscoso Martín</h2>
+          <hr class="profile-rule">
+          <p class="profile-caption">ESTUDIANTE DE<br>TRABAJO SOCIAL</p>
+        </div>
+        <div class="profile-card-footer">JEREZ DE LA FRONTERA</div>
+      </aside>
+
+      <div class="hero-copy">
+        <p class="eyebrow">Currículum</p>
+        <h1 class="hero-title" id="hero-title">Hola.</h1>
+        <p class="hero-subtitle">Soy Macarena Moscoso Martín</p>
+        <p class="hero-description">Actualmente cursando 4º de Trabajo Social. Persona amable, organizada y responsable, con capacidad para trabajar en equipo y adaptarse a diferentes tareas.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#formacion">CURRÍCULUM</a>
+          <a class="button button-secondary" href="#contacto">CONTACTO</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="resume">
+      <section class="section" id="sobre-mi" aria-labelledby="sobre-mi-title">
+        <div class="section-marker" aria-hidden="true">&lt;! -- ===== SECCIÓN: SOBRE MÍ ===== --&gt;</div>
+        <h2 id="sobre-mi-title">Sobre mí</h2>
+        <div class="section-content">
+          <p>Actualmente cursando 4º de Trabajo Social.</p>
+          <p>Persona amable, organizada y responsable. Con capacidad para trabajar en equipo y adaptarse a diferentes tareas.</p>
+        </div>
+        <div class="section-marker section-marker-end" aria-hidden="true">&lt;! -- ===== FIN: SOBRE MÍ ===== --&gt;</div>
+      </section>
+
+      <section class="section" id="formacion" aria-labelledby="formacion-title">
+        <div class="section-marker" aria-hidden="true">&lt;! -- ===== SECCIÓN: FORMACIÓN ===== --&gt;</div>
+        <h2 id="formacion-title">Formación</h2>
+        <div class="section-content">
+          <article class="entry">
+            <h3 class="entry-title">Grado en Trabajo Social – Universidad de Cádiz (UCA)</h3>
+            <p class="entry-detail">2023 - Actualidad</p>
+          </article>
+          <article class="entry">
+            <h3 class="entry-title">Bachillerato – Salle Sagrado Corazón de Jesús</h3>
+            <p class="entry-detail">2021 - 2023</p>
+          </article>
+          <article class="entry">
+            <h3 class="entry-title">Educación Secundaria Obligatoria (ESO)</h3>
+            <p class="entry-detail">2017 - 2021</p>
+          </article>
+        </div>
+        <div class="section-marker section-marker-end" aria-hidden="true">&lt;! -- ===== FIN: FORMACIÓN ===== --&gt;</div>
+      </section>
+
+      <section class="section" id="experiencia" aria-labelledby="experiencia-title">
+        <div class="section-marker" aria-hidden="true">&lt;! -- ===== SECCIÓN: EXPERIENCIA ===== --&gt;</div>
+        <h2 id="experiencia-title">Experiencia</h2>
+        <div class="section-content">
+          <p>No consta experiencia laboral remunerada.</p>
+        </div>
+        <div class="section-marker section-marker-end" aria-hidden="true">&lt;! -- ===== FIN: EXPERIENCIA ===== --&gt;</div>
+      </section>
+
+      <section class="section" id="habilidades" aria-labelledby="habilidades-title">
+        <div class="section-marker" aria-hidden="true">&lt;! -- ===== SECCIÓN: HABILIDADES ===== --&gt;</div>
+        <h2 id="habilidades-title">Habilidades</h2>
+        <div class="section-content">
+          <ul class="skills-list">
+            <li>Trabajo en equipo</li>
+            <li>Responsabilidad</li>
+            <li>Organización</li>
+            <li>Buena comunicación</li>
+            <li>Capacidad de aprendizaje</li>
+            <li>Trato con personas</li>
+            <li>Adaptabilidad</li>
+          </ul>
+        </div>
+        <div class="section-marker section-marker-end" aria-hidden="true">&lt;! -- ===== FIN: HABILIDADES ===== --&gt;</div>
+      </section>
+
+      <section class="section" id="idiomas" aria-labelledby="idiomas-title">
+        <div class="section-marker" aria-hidden="true">&lt;! -- ===== SECCIÓN: IDIOMAS ===== --&gt;</div>
+        <h2 id="idiomas-title">Idiomas</h2>
+        <div class="section-content">
+          <p><strong>Inglés:</strong> Nivel B1</p>
+        </div>
+        <div class="section-marker section-marker-end" aria-hidden="true">&lt;! -- ===== FIN: IDIOMAS ===== --&gt;</div>
+      </section>
+
+      <section class="section" id="otros" aria-labelledby="otros-title">
+        <div class="section-marker" aria-hidden="true">&lt;! -- ===== SECCIÓN: OTROS ===== --&gt;</div>
+        <h2 id="otros-title">Otros</h2>
+        <div class="section-content">
+          <article class="entry">
+            <h3 class="entry-title">Voluntariado: Cruz Roja – Voluntariado con personas mayores (2024)</h3>
+            <p class="entry-detail">Acompañamiento y atención a personas mayores, participación en actividades y apoyo, trato cercano y respetuoso con las personas participantes.</p>
+          </article>
+          <article class="entry">
+            <h3 class="entry-title">Carné de conducir</h3>
+            <p class="entry-detail">Permiso B</p>
+          </article>
+          <article class="entry">
+            <h3 class="entry-title">Vehículo propio</h3>
+            <p class="entry-detail">Sí</p>
+          </article>
+          <article class="entry">
+            <h3 class="entry-title">Nacionalidad</h3>
+            <p class="entry-detail">Española</p>
+          </article>
+        </div>
+        <div class="section-marker section-marker-end" aria-hidden="true">&lt;! -- ===== FIN: OTROS ===== --&gt;</div>
+      </section>
+
+      <section class="section" id="contacto" aria-labelledby="contacto-title">
+        <div class="section-marker" aria-hidden="true">&lt;! -- ===== SECCIÓN: CONTACTO ===== --&gt;</div>
+        <h2 id="contacto-title">Contacto</h2>
+        <div class="section-content contact-grid">
+          <div class="contact-item">
+            <span class="contact-label">Teléfono</span>
+            <a href="tel:+34601087205">601 08 72 05</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Correo electrónico</span>
+            <a href="mailto:Macarenamoscosomartin@gmail.com">Macarenamoscosomartin@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Ubicación</span>
+            <span>Jerez de la Frontera</span>
+          </div>
+        </div>
+        <div class="section-marker section-marker-end" aria-hidden="true">&lt;! -- ===== FIN: CONTACTO ===== --&gt;</div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">Macarena Moscoso Martín · Currículum</footer>
+</body>
+</html>
